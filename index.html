@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- PAGE TITLE -->
-    <title>V-Digital CCTV</title>
-    
+    <title>V-Digital CCTV | Instalasi CCTV Surabaya</title>
+
     <!-- META DESCRIPTION -->
     <meta name="description" content="Penjualan & jasa instalasi CCTV profesional di Surabaya dan luar kota. Pengalaman 15+ tahun, integrasi ke HP/Gadget, dan bergaransi. Hubungi V-Digital sekarang!">
 
     <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,179 +22,890 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #0f172a;
+            background:
+                linear-gradient(rgba(56, 189, 248, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.025) 1px, transparent 1px),
+                #07111f;
+
+            background-size: 42px 42px;
+
             color: #f8fafc;
             line-height: 1.6;
             padding: 20px 15px;
         }
 
-        .container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: #1e293b;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(14, 165, 233, 0.10),
+                    transparent 35%
+                );
+
+            z-index: -1;
         }
 
-        /* HEADER / LOGO */
+
+        /* =========================================================
+           MAIN CONTAINER
+        ========================================================= */
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20, 35, 55, 0.98),
+                    rgba(10, 24, 40, 0.98)
+                );
+
+            padding: 35px 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(56, 189, 248, 0.14);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 1px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(56, 189, 248, 0.7),
+                transparent
+            );
+        }
+
+
+        /* =========================================================
+           HEADER / BRAND
+        ========================================================= */
+
         .brand {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            padding: 5px 0 15px;
         }
 
         .brand-logo {
-            width: 300px;
-            max-width: 90%;
+            width: 330px;
+            max-width: 88%;
             height: auto;
+
             display: block;
-            margin: 0 auto 10px;
+            margin: 0 auto 12px;
+
+            filter:
+                drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
         }
 
         .brand p {
-            font-size: 0.95rem;
-            color: #94a3b8;
+            font-size: 0.98rem;
+            color: #a8b9cc;
             margin-top: 5px;
         }
 
-        /* HERO */
+        .security-status {
+            margin-top: 12px;
+
+            font-size: 0.68rem;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+            color: #5f7a96;
+
+            text-transform: uppercase;
+        }
+
+        .status-dot {
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            background: #22c55e;
+            border-radius: 50%;
+
+            margin-right: 7px;
+
+            box-shadow:
+                0 0 8px rgba(34, 197, 94, 0.8);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
         .hero {
+            position: relative;
+
+            padding: 35px 30px;
+
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(8, 35, 58, 0.95),
+                    rgba(15, 31, 49, 0.92)
+                );
+
+            box-shadow:
+                inset 0 0 30px rgba(14, 165, 233, 0.035);
+
+            overflow: hidden;
+
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #334155;
+        }
+
+        .hero::before {
+            content: "SECURE • MONITOR • PROTECT";
+
+            position: absolute;
+
+            top: 14px;
+            right: 20px;
+
+            font-size: 0.55rem;
+            letter-spacing: 2px;
+
+            color: rgba(56, 189, 248, 0.35);
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            right: -100px;
+            bottom: -100px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(56, 189, 248, 0.10);
+
+            box-shadow:
+                0 0 0 25px rgba(56, 189, 248, 0.025),
+                0 0 0 50px rgba(56, 189, 248, 0.015);
+
+            pointer-events: none;
+        }
+
+        .hero-label {
+            font-size: 0.68rem;
+
+            color: #38bdf8;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
         }
 
         .hero h2 {
-            font-size: 1.4rem;
+            font-size: 2rem;
+
+            line-height: 1.25;
+
             color: #ffffff;
-            margin-bottom: 10px;
+
+            margin-bottom: 15px;
+
+            font-weight: 700;
+        }
+
+        .hero h2 span {
+            color: #38bdf8;
         }
 
         .hero p {
-            font-size: 0.9rem;
+            max-width: 680px;
+
+            margin: 0 auto 22px;
+
+            font-size: 0.98rem;
+
             color: #cbd5e1;
-            margin-bottom: 20px;
         }
 
-        /* WHATSAPP BUTTON */
+
+        /* =========================================================
+           WHATSAPP BUTTON
+        ========================================================= */
+
         .btn-wa {
             display: inline-block;
-            background-color: #22c55e;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #22c55e,
+                    #16a34a
+                );
+
             color: #ffffff;
-            padding: 12px 25px;
+
+            padding: 13px 28px;
+
             border-radius: 30px;
+
             text-decoration: none;
-            font-weight: bold;
+
+            font-weight: 700;
+
             font-size: 0.95rem;
-            transition: 0.3s;
-            margin-top: 10px;
+
+            transition: 0.25s;
+
+            margin-top: 5px;
+
+            box-shadow:
+                0 8px 25px rgba(34, 197, 94, 0.18);
         }
 
         .btn-wa:hover {
-            background-color: #16a34a;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px rgba(34, 197, 94, 0.28);
         }
 
-        /* SECTION */
+
+        /* =========================================================
+           HERO CREDENTIALS
+        ========================================================= */
+
+        .hero-credentials {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 1px;
+
+            max-width: 700px;
+
+            margin: 28px auto 0;
+
+            background: rgba(56, 189, 248, 0.12);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+        }
+
+        .credential {
+            padding: 13px 8px;
+
+            background: rgba(7, 20, 34, 0.65);
+
+            font-size: 0.72rem;
+
+            color: #aebfd0;
+
+            text-align: center;
+        }
+
+        .credential strong {
+            display: block;
+
+            color: #e2e8f0;
+
+            font-size: 0.76rem;
+
+            margin-bottom: 2px;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
         .section {
-            margin: 25px 0;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 20px;
+            margin: 30px 0;
+
+            padding-bottom: 25px;
+
+            border-bottom: 1px solid #26384d;
         }
 
         .section-title {
-            font-size: 1.1rem;
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 1.12rem;
+
             color: #38bdf8;
-            margin-bottom: 12px;
+
+            margin-bottom: 18px;
+
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+
+            letter-spacing: 1.3px;
+
+            font-weight: 700;
         }
 
-        /* LIST */
-        ul {
-            list-style: none;
+        .section-title::before {
+            content: "";
+
+            width: 26px;
+            height: 4px;
+
+            border-radius: 5px;
+
+            background: #38bdf8;
+
+            box-shadow:
+                0 0 10px rgba(56, 189, 248, 0.35);
         }
 
-        ul li {
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            color: #e2e8f0;
-            position: relative;
-            padding-left: 20px;
+        .section-subtitle {
+            margin-left: auto;
+
+            font-size: 0.62rem;
+
+            color: #58718b;
+
+            letter-spacing: 1.5px;
+
+            font-weight: 600;
         }
 
-        ul li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
+
+        /* =========================================================
+           SERVICE CARDS
+        ========================================================= */
+
+        .service-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+        .service-card {
+            padding: 20px 17px;
+
+            border-radius: 11px;
+
+            border: 1px solid rgba(56, 189, 248, 0.16);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(16, 43, 67, 0.78),
+                    rgba(12, 30, 48, 0.85)
+                );
+
+            transition: 0.25s;
+
+            min-height: 190px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+
+            border-color: rgba(56, 189, 248, 0.38);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(14, 165, 233, 0.10);
+
+            border: 1px solid rgba(56, 189, 248, 0.18);
+
             color: #38bdf8;
+
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
         }
 
-        /* STEPS */
-        .steps ol {
-            padding-left: 20px;
-        }
+        .service-card h3 {
+            font-size: 0.98rem;
 
-        .steps li {
-            font-size: 0.9rem;
-            color: #e2e8f0;
+            color: #f8fafc;
+
+            line-height: 1.35;
+
             margin-bottom: 8px;
         }
 
-        /* CSS GALERI FOTO */
+        .service-card p {
+            font-size: 0.78rem;
+
+            color: #9fb2c6;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           TECHNOLOGY STRIP
+        ========================================================= */
+
+        .technology-strip {
+            display: grid;
+
+            grid-template-columns: repeat(6, 1fr);
+
+            border: 1px solid rgba(56, 189, 248, 0.12);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background: rgba(5, 18, 31, 0.65);
+
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            text-align: center;
+
+            padding: 17px 7px;
+
+            border-right: 1px solid rgba(56, 189, 248, 0.12);
+        }
+
+        .tech-item:last-child {
+            border-right: none;
+        }
+
+        .tech-icon {
+            color: #38bdf8;
+
+            font-size: 1.25rem;
+
+            margin-bottom: 6px;
+        }
+
+        .tech-item span {
+            display: block;
+
+            color: #cbd5e1;
+
+            font-size: 0.58rem;
+
+            line-height: 1.4;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
         .gallery-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+
+            gap: 14px;
+
             margin-top: 15px;
+        }
+
+        .gallery-card {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            border: 1px solid #2d4359;
+
+            background: #0b1725;
         }
 
         .gallery-item {
             width: 100%;
-            height: 180px;
+
+            height: 210px;
+
             object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid #334155;
-            transition: 0.3s;
-            cursor: pointer;
+
+            display: block;
+
+            transition: 0.35s;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.03);
-            border-color: #38bdf8;
+        .gallery-card:hover .gallery-item {
+            transform: scale(1.04);
         }
 
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #94a3b8;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
+        .gallery-caption {
+            position: absolute;
+
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+
+            padding: 8px 10px;
+
+            border-radius: 6px;
+
+            background: rgba(5, 15, 25, 0.82);
+
+            backdrop-filter: blur(5px);
+
+            color: #e2e8f0;
+
+            font-size: 0.72rem;
+
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
-        .footer strong {
+
+        /* =========================================================
+           WHY V-DIGITAL
+        ========================================================= */
+
+        .benefit-grid {
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 10px;
+        }
+
+        .benefit-card {
+            padding: 17px 12px;
+
+            min-height: 155px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17, 40, 62, 0.8),
+                    rgba(10, 27, 44, 0.85)
+                );
+
+            border: 1px solid rgba(56, 189, 248, 0.12);
+        }
+
+        .benefit-icon {
+            font-size: 1.35rem;
+
+            color: #38bdf8;
+
+            margin-bottom: 8px;
+        }
+
+        .benefit-card h3 {
+            font-size: 0.78rem;
+
+            color: #f8fafc;
+
+            line-height: 1.35;
+
+            margin-bottom: 7px;
+        }
+
+        .benefit-card p {
+            font-size: 0.68rem;
+
+            color: #91a6ba;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           PROCESS / 3 LANGKAH
+        ========================================================= */
+
+        .process-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .process-card {
+            position: relative;
+
+            padding: 20px;
+
+            border: 1px solid rgba(56, 189, 248, 0.14);
+
+            border-radius: 10px;
+
+            background: rgba(8, 24, 39, 0.72);
+        }
+
+        .process-number {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #0e7490;
+
+            border: 1px solid rgba(56, 189, 248, 0.4);
+
             color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
         }
 
-        .company-name {
-            font-size: 26px;
-            margin-bottom: 6px;
+        .process-card h3 {
+            font-size: 0.9rem;
+
+            color: #ffffff;
+
+            margin-bottom: 5px;
+        }
+
+        .process-card p {
+            font-size: 0.76rem;
+
+            color: #9fb2c6;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .footer {
+            margin-top: 30px;
+
+            padding: 28px 20px 10px;
+
+            border-top: 1px solid #2b4056;
+
+            text-align: center;
+
+            color: #94a3b8;
+        }
+
+        .footer-company {
+            font-size: 1.45rem;
+
+            color: #ffffff;
+
+            font-weight: 700;
+
+            margin-bottom: 4px;
+        }
+
+        .footer-tagline {
+            font-size: 0.62rem;
+
+            color: #38bdf8;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
         }
 
         .contact-person {
-            font-size: 17px;
+            font-size: 0.9rem;
+
+            color: #a9bacb;
+
             margin: 4px 0;
         }
 
-        .phone {
-            font-size: 20px;
-            margin: 8px 0 18px;
+        .contact-person strong {
+            color: #ffffff;
         }
 
-        /* RESPONSIVE MOBILE */
+        .phone {
+            font-size: 1.15rem;
+
+            color: #ffffff;
+
+            margin: 7px 0 18px;
+        }
+
+        .footer-note {
+            margin-top: 18px;
+
+            font-size: 0.6rem;
+
+            color: #50677e;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 25px 17px;
+
+                border-radius: 14px;
+            }
+
+            .brand-logo {
+                width: 290px;
+            }
+
+            .hero {
+                padding: 30px 18px;
+            }
+
+            .hero h2 {
+                font-size: 1.55rem;
+            }
+
+            .hero::before {
+                display: none;
+            }
+
+            .hero-credentials {
+                grid-template-columns: 1fr;
+
+                gap: 1px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: auto;
+            }
+
+            .technology-strip {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .tech-item:nth-child(3) {
+                border-right: none;
+            }
+
+            .tech-item:nth-child(-n+3) {
+                border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+            }
+
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefit-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-subtitle {
+                display: none;
+            }
+        }
+
+
         @media (max-width: 480px) {
+
+            .brand-logo {
+                width: 250px;
+            }
+
+            .brand p {
+                font-size: 0.84rem;
+            }
+
+            .security-status {
+                font-size: 0.58rem;
+                letter-spacing: 2px;
+            }
+
+            .hero h2 {
+                font-size: 1.38rem;
+            }
+
+            .hero p {
+                font-size: 0.84rem;
+            }
+
+            .btn-wa {
+                font-size: 0.86rem;
+
+                padding: 12px 21px;
+            }
 
             .gallery-grid {
                 grid-template-columns: 1fr;
@@ -200,52 +915,85 @@
                 height: 220px;
             }
 
-            .brand-logo {
-                width: 250px;
-                max-width: 95%;
+            .technology-strip {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .brand p {
-                font-size: 0.9rem;
+            .tech-item {
+                border-right: 1px solid rgba(56, 189, 248, 0.12);
+                border-bottom: 1px solid rgba(56, 189, 248, 0.12);
             }
 
-            .hero h2 {
-                font-size: 1.3rem;
+            .tech-item:nth-child(2n) {
+                border-right: none;
+            }
+
+            .tech-item:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-card:last-child {
+                grid-column: auto;
             }
 
             .company-name {
-                font-size: 24px;
+                font-size: 1.3rem;
             }
 
             .phone {
-                font-size: 18px;
+                font-size: 1.05rem;
             }
         }
     </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
-    <!-- Header -->
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
     <div class="brand">
+
         <img
             src="logo-vdigital.png"
             class="brand-logo"
-            alt="V-Digital CCTV & Security Solutions Surabaya"
+            alt="V-Digital CCTV Surabaya"
         >
 
         <p>
             Penjualan & Jasa Profesional Instalasi CCTV (Dalam & Luar Kota)
         </p>
+
+        <div class="security-status">
+            <span class="status-dot"></span>
+            CCTV • SECURITY • MONITORING
+        </div>
+
     </div>
 
 
-    <!-- Hero -->
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
     <div class="hero">
+
+        <div class="hero-label">
+            Modern CCTV Solution
+        </div>
+
         <h2>
-            Pantau Keamanan Rumah & Bisnis Anda Kapan Saja, Dari Mana Saja
+            Pantau Keamanan Rumah & Bisnis Anda
+            <span>Kapan Saja, Dari Mana Saja</span>
         </h2>
 
         <p>
@@ -260,151 +1008,455 @@
         >
             Konsultasi & Penawaran Gratis
         </a>
+
+
+        <div class="hero-credentials">
+
+            <div class="credential">
+                <strong>PROFESIONAL</strong>
+                Berpengalaman
+            </div>
+
+            <div class="credential">
+                <strong>INSTALASI RAPI</strong>
+                Terstandar
+            </div>
+
+            <div class="credential">
+                <strong>LAYANAN BERGARANSI</strong>
+                After Sales Support
+            </div>
+
+        </div>
+
     </div>
 
 
-    <!-- Layanan -->
+    <!-- =========================================================
+         LAYANAN UTAMA
+    ========================================================== -->
+
     <div class="section">
+
         <div class="section-title">
             Layanan Utama
+
+            <span class="section-subtitle">
+                Solusi keamanan untuk setiap kebutuhan
+            </span>
         </div>
 
-        <ul>
-            <li>
-                <strong>Instalasi CCTV Offline & Online Multi-Channel:</strong>
-                Untuk rumah, ruko, kantor, hingga area industri.
-            </li>
 
-            <li>
-                <strong>Integrasi Monitor Multi-Platform:</strong>
-                Pantau real-time dari HP (Android/iOS), Tablet, atau PC.
-            </li>
+        <div class="service-grid">
 
-            <li>
-                <strong>Service, Maintenance & Upgrade:</strong>
-                Perbaikan gangguan teknis dan pembaruan unit ke sistem HD/IP terbaru.
-            </li>
-        </ul>
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Instalasi CCTV
+                    Offline & Online
+                    Multi-Channel
+                </h3>
+
+                <p>
+                    Untuk rumah, ruko, kantor,
+                    hingga area industri.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ◫
+                </div>
+
+                <h3>
+                    Integrasi Monitor
+                    Multi-Platform
+                </h3>
+
+                <p>
+                    Pantau real-time dari HP
+                    (Android/iOS), Tablet, atau PC.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Service, Maintenance
+                    & Upgrade
+                </h3>
+
+                <p>
+                    Perbaikan gangguan teknis
+                    dan pembaruan unit ke sistem
+                    HD/IP terbaru.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- TECHNOLOGY STRIP -->
+
+        <div class="technology-strip">
+
+            <div class="tech-item">
+                <div class="tech-icon">▣</div>
+                <span>HD Quality<br>Video</span>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-icon">◉</div>
+                <span>IP Camera<br>System</span>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-icon">▯</div>
+                <span>Remote Access<br>Anywhere</span>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-icon">▤</div>
+                <span>DVR / NVR<br>Integration</span>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-icon">⚙</div>
+                <span>Professional<br>Installation</span>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-icon">✓</div>
+                <span>Maintenance<br>& Support</span>
+            </div>
+
+        </div>
+
     </div>
 
 
-    <!-- GALERI FOTO -->
+    <!-- =========================================================
+         GALERI FOTO
+    ========================================================== -->
+
     <div class="section">
+
         <div class="section-title">
+
             Galeri Pengerjaan
+
+            <span class="section-subtitle">
+                Dokumentasi hasil instalasi
+            </span>
+
         </div>
+
 
         <div class="gallery-grid">
 
-            <img
-                src="Foto1.png"
-                class="gallery-item"
-                alt="V-Digital - Hasil Pengerjaan 1"
-            >
 
-            <img
-                src="Foto2.png"
-                class="gallery-item"
-                alt="V-Digital - Hasil Pengerjaan 2"
-            >
+            <div class="gallery-card">
 
-            <img
-                src="Foto3.png"
-                class="gallery-item"
-                alt="V-Digital - Hasil Pengerjaan 3"
-            >
+                <img
+                    src="Foto1.png"
+                    class="gallery-item"
+                    alt="V-Digital - Hasil Pengerjaan 1"
+                >
 
-            <img
-                src="Foto4.png"
-                class="gallery-item"
-                alt="V-Digital - Hasil Pengerjaan 4"
-            >
+                <div class="gallery-caption">
+                    Instalasi CCTV • Project 01
+                </div>
+
+            </div>
+
+
+            <div class="gallery-card">
+
+                <img
+                    src="Foto2.png"
+                    class="gallery-item"
+                    alt="V-Digital - Hasil Pengerjaan 2"
+                >
+
+                <div class="gallery-caption">
+                    Instalasi CCTV • Project 02
+                </div>
+
+            </div>
+
+
+            <div class="gallery-card">
+
+                <img
+                    src="Foto3.png"
+                    class="gallery-item"
+                    alt="V-Digital - Hasil Pengerjaan 3"
+                >
+
+                <div class="gallery-caption">
+                    Monitoring & Installation • Project 03
+                </div>
+
+            </div>
+
+
+            <div class="gallery-card">
+
+                <img
+                    src="Foto4.png"
+                    class="gallery-item"
+                    alt="V-Digital - Hasil Pengerjaan 4"
+                >
+
+                <div class="gallery-caption">
+                    Instalasi CCTV • Project 04
+                </div>
+
+            </div>
+
 
         </div>
+
     </div>
 
 
-    <!-- Keunggulan -->
+    <!-- =========================================================
+         MENGAPA MEMILIH V-DIGITAL
+    ========================================================== -->
+
     <div class="section">
+
         <div class="section-title">
+
             Mengapa Memilih V-Digital?
+
+            <span class="section-subtitle">
+                Kualitas • Pengalaman • Layanan
+            </span>
+
         </div>
 
-        <ul>
 
-            <li>
-                <strong>Perangkat Asli & Brand Terkemuka:</strong>
-                Unit kamera berkualitas tinggi dan teruji ketahanannya.
-            </li>
+        <div class="benefit-grid">
 
-            <li>
-                <strong>Integrasi Akses Jarak Jauh:</strong>
-                Kemudahan pemantauan 24/7 di genggaman Anda.
-            </li>
 
-            <li>
-                <strong>Jangkauan Layanan Luas:</strong>
-                Berbasis di Surabaya, melayani area Dalam Kota & Luar Kota.
-            </li>
+            <div class="benefit-card">
 
-            <li>
-                <strong>Pengalaman 15+ Tahun:</strong>
-                Teknisi berjam terbang tinggi yang fleksibel menyesuaikan
-                skema instalasi sesuai permintaan Anda.
-            </li>
+                <div class="benefit-icon">
+                    ★
+                </div>
 
-            <li>
-                <strong>Harga Termurah di Surabaya:</strong>
-                Dengan tetap menjaga kualitas layanan dan produk yang dipakai,
-                kami adalah salah satu yang termurah di Surabaya.
-            </li>
+                <h3>
+                    15+ Tahun Pengalaman
+                </h3>
 
-        </ul>
+                <p>
+                    Teknisi berjam terbang tinggi
+                    yang profesional.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Perangkat Asli &
+                    Brand Terkemuka
+                </h3>
+
+                <p>
+                    Unit kamera berkualitas tinggi
+                    dan teruji ketahanannya.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    ▯
+                </div>
+
+                <h3>
+                    Akses Jarak Jauh 24/7
+                </h3>
+
+                <p>
+                    Pantau dari mana saja melalui
+                    HP, Tablet, atau PC.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    ●
+                </div>
+
+                <h3>
+                    Jangkauan Luas
+                </h3>
+
+                <p>
+                    Berbasis di Surabaya,
+                    melayani Dalam Kota & Luar Kota.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+                    ◆
+                </div>
+
+                <h3>
+                    Harga Kompetitif
+                </h3>
+
+                <p>
+                    Salah satu yang termurah di
+                    Surabaya dengan kualitas terbaik.
+                </p>
+
+            </div>
+
+
+        </div>
+
     </div>
 
 
-    <!-- Cara Pemesanan -->
-    <div class="section steps">
+    <!-- =========================================================
+         CARA PEMESANAN
+    ========================================================== -->
+
+    <div class="section">
 
         <div class="section-title">
+
             3 Langkah Mudah
+
+            <span class="section-subtitle">
+                Proses cepat dan transparan
+            </span>
+
         </div>
 
-        <ol>
 
-            <li>
-                <strong>Konsultasi:</strong>
-                Diskusi kebutuhan titik kamera via WhatsApp.
-            </li>
+        <div class="process-grid">
 
-            <li>
-                <strong>Penawaran:</strong>
-                Penentuan estimasi biaya secara transparan.
-            </li>
 
-            <li>
-                <strong>Pemasangan:</strong>
-                Pemasangan langsung di lokasi dan setting hingga siap pakai.
-            </li>
+            <div class="process-card">
 
-        </ol>
+                <div class="process-number">
+                    1
+                </div>
+
+                <h3>
+                    Konsultasi
+                </h3>
+
+                <p>
+                    Diskusi kebutuhan titik kamera
+                    via WhatsApp.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    2
+                </div>
+
+                <h3>
+                    Penawaran
+                </h3>
+
+                <p>
+                    Penentuan estimasi biaya
+                    secara transparan.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    3
+                </div>
+
+                <h3>
+                    Pemasangan
+                </h3>
+
+                <p>
+                    Pemasangan langsung di lokasi
+                    dan setting hingga siap pakai.
+                </p>
+
+            </div>
+
+
+        </div>
+
     </div>
 
 
-    <!-- Footer -->
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
     <div class="footer">
 
-        <p class="company-name">
-            <strong>V-Digital Surabaya</strong>
-        </p>
+        <div class="footer-company">
+            V-Digital Surabaya
+        </div>
+
+        <div class="footer-tagline">
+            CCTV • Security • Monitoring
+        </div>
+
 
         <p class="contact-person">
-            Contact Person: <strong>Victor</strong>
+            Contact Person:
+            <strong>Victor</strong>
         </p>
 
+
         <p class="phone">
-            WhatsApp / Telp: <strong>+62 822-3054-2222</strong>
+            WhatsApp / Telp:
+            <strong>+62 822-3054-2222</strong>
         </p>
+
 
         <a
             href="https://wa.me/6282230542222?text=Halo%20V-Digital,%20saya%20tertarik%20untuk%20pasang%20CCTV."
@@ -414,7 +1466,13 @@
             Hubungi via WhatsApp
         </a>
 
+
+        <div class="footer-note">
+            V-Digital Surabaya • Professional CCTV Installation
+        </div>
+
     </div>
+
 
 </div>
 
