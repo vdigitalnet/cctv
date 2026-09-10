@@ -611,7 +611,102 @@
             border: 1px solid rgba(255,255,255,0.08);
         }
 
+/* =========================================================
+   IMAGE LIGHTBOX / FULL PREVIEW
+========================================================= */
 
+.lightbox {
+    display: none;
+
+    position: fixed;
+    z-index: 9999;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(2, 8, 18, 0.92);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(56, 189, 248, 0.25);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.7);
+
+    animation: lightboxFade 0.25s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+
+    top: 18px;
+    right: 25px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(15, 23, 42, 0.85);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: #ffffff;
+
+    font-size: 1.5rem;
+
+    text-decoration: none;
+
+    line-height: 1;
+
+    transition: 0.2s;
+}
+
+.lightbox-close:hover {
+    background: rgba(56, 189, 248, 0.18);
+
+    border-color: rgba(56, 189, 248, 0.5);
+
+    color: #38bdf8;
+}
+
+@keyframes lightboxFade {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
         /* =========================================================
            WHY V-DIGITAL
         ========================================================= */
@@ -1171,67 +1266,72 @@
         <div class="gallery-grid">
 
 
-            <div class="gallery-card">
+<div class="gallery-card">
 
-                <img
-                    src="Foto1.png"
-                    class="gallery-item"
-                    alt="V-Digital - Hasil Pengerjaan 1"
-                >
+    <a href="#foto1">
+        <img
+            src="Foto1.png"
+            class="gallery-item"
+            alt="V-Digital - Hasil Pengerjaan 1"
+        >
+    </a>
 
-                <div class="gallery-caption">
-                    Instalasi CCTV • Project 01
-                </div>
+    <div class="gallery-caption">
+        •Instalasi CCTV
+    </div>
 
-            </div>
-
-
-            <div class="gallery-card">
-
-                <img
-                    src="Foto2.png"
-                    class="gallery-item"
-                    alt="V-Digital - Hasil Pengerjaan 2"
-                >
-
-                <div class="gallery-caption">
-                    Instalasi CCTV • Project 02
-                </div>
-
-            </div>
+</div>
 
 
-            <div class="gallery-card">
+<div class="gallery-card">
 
-                <img
-                    src="Foto3.png"
-                    class="gallery-item"
-                    alt="V-Digital - Hasil Pengerjaan 3"
-                >
+    <a href="#foto2">
+        <img
+            src="Foto2.png"
+            class="gallery-item"
+            alt="V-Digital - Hasil Pengerjaan 2"
+        >
+    </a>
 
-                <div class="gallery-caption">
-                    Monitoring & Installation • Project 03
-                </div>
+    <div class="gallery-caption">
+        •Instalasi Monitoring
+    </div>
 
-            </div>
-
-
-            <div class="gallery-card">
-
-                <img
-                    src="Foto4.png"
-                    class="gallery-item"
-                    alt="V-Digital - Hasil Pengerjaan 4"
-                >
-
-                <div class="gallery-caption">
-                    Instalasi CCTV • Project 04
-                </div>
-
-            </div>
+</div>
 
 
-        </div>
+<div class="gallery-card">
+
+    <a href="#foto3">
+        <img
+            src="Foto3.png"
+            class="gallery-item"
+            alt="V-Digital - Hasil Pengerjaan 3"
+        >
+    </a>
+
+    <div class="gallery-caption">
+        •Offline & Online Monitoring
+    </div>
+
+</div>
+
+
+<div class="gallery-card">
+
+    <a href="#foto4">
+        <img
+            src="Foto4.png"
+            class="gallery-item"
+            alt="V-Digital - Hasil Pengerjaan 4"
+        >
+    </a>
+
+    <div class="gallery-caption">
+        •Cable Management
+    </div>
+
+</div>
 
     </div>
 
@@ -1475,6 +1575,63 @@
 
 
 </div>
+<!-- =========================================================
+     IMAGE LIGHTBOX
+========================================================= -->
 
+<div id="foto1" class="lightbox">
+
+    <a href="#" class="lightbox-close" aria-label="Tutup">
+        &times;
+    </a>
+
+    <img
+        src="Foto1.png"
+        alt="V-Digital - Hasil Pengerjaan 1"
+    >
+
+</div>
+
+
+<div id="foto2" class="lightbox">
+
+    <a href="#" class="lightbox-close" aria-label="Tutup">
+        &times;
+    </a>
+
+    <img
+        src="Foto2.png"
+        alt="V-Digital - Hasil Pengerjaan 2"
+    >
+
+</div>
+
+
+<div id="foto3" class="lightbox">
+
+    <a href="#" class="lightbox-close" aria-label="Tutup">
+        &times;
+    </a>
+
+    <img
+        src="Foto3.png"
+        alt="V-Digital - Hasil Pengerjaan 3"
+    >
+
+</div>
+
+
+<div id="foto4" class="lightbox">
+
+    <a href="#" class="lightbox-close" aria-label="Tutup">
+        &times;
+    </a>
+
+    <img
+        src="Foto4.png"
+        alt="V-Digital - Hasil Pengerjaan 4"
+    >
+
+</div>
 </body>
 </html>
