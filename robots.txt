@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vdigitalnet.github.io/cctv/sitemap.xml
